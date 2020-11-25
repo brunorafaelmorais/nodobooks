@@ -3,7 +3,7 @@ import SEO from '@/components/SEO'
 function Home(): JSX.Element {
   return (
     <div>
-      <SEO title="Homepage" />
+      <SEO title="Bookstore" />
       <h1>Hello World</h1>
     </div>
   )
