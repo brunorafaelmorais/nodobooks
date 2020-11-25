@@ -1,4 +1,4 @@
-import SEO from '@/components/SEO'
+import SEO from '@/settings/SEO'
 
 function Home(): JSX.Element {
   return (
