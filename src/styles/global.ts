@@ -9,6 +9,6 @@ export default createGlobalStyle`
   }
 
   body {
-    font: 400 16px 'Roboto', sans-serif;
+    font: 400 16px 'Open Sans', Arial, Helvetica, sans-serif;
   }
 `
