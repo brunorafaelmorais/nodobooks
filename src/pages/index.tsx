@@ -1,9 +1,7 @@
 function Home(): JSX.Element {
   return (
     <div>
-      <main>
-        <h1>Hello World</h1>
-      </main>
+      <h1>Hello World</h1>
     </div>
   )
 }
