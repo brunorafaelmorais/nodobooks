@@ -80,7 +80,7 @@ export const TypoSubtitle2 = styled(TypoBase)`
 
 export const TypoBody1 = styled(TypoBase)`
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
 `
 
 export const TypoBody2 = styled(TypoBase)`

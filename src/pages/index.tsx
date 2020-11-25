@@ -1,12 +1,13 @@
+import Banner from '@/atoms/Banner'
 import SEO from '@/settings/SEO'
 
-function Home(): JSX.Element {
+import MainLayout from '@/templates/MainLayout'
+
+export default function Home(): JSX.Element {
   return (
-    <div>
+    <MainLayout>
       <SEO title="Bookstore" />
-      <h1>Hello World</h1>
-    </div>
+      <Banner path="/banner.jpg" />
+    </MainLayout>
   )
 }
-
-export default Home
