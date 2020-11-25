@@ -1,6 +1,8 @@
 export default {
   colors: {
-    primary: '#4C3DB2'
+    primary: '#4C3DB2',
+    textBlack: '#1C2A39',
+    textGray: '#5C6A79'
   },
   gutters: {
     xs: 8,
