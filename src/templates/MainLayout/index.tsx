@@ -1,6 +1,9 @@
 import { ReactNode } from 'react'
 
 import Footer from '@/organisms/Footer'
+import Header from '@/organisms/Header'
+
+import { Container } from './styles'
 
 type Props = {
   children: ReactNode
@@ -8,9 +11,10 @@ type Props = {
 
 export default function MainLayout({ children }: Props): JSX.Element {
   return (
-    <main>
-      <div>{children}</div>
+    <Container>
+      <Header />
+      {children}
       <Footer />
-    </main>
+    </Container>
   )
 }
