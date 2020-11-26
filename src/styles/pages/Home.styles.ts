@@ -12,8 +12,9 @@ export const Container = styled.div`
       flex-shrink: 0;
       background: #efeef6;
       padding-top: ${props => props.theme.gutters.lg}px;
-      padding-right: ${props => props.theme.gutters.lg}px;
+      padding-right: ${props => props.theme.gutters.lg * 2.2}px;
       padding-bottom: ${props => props.theme.gutters.lg}px;
+      margin-right: -${props => props.theme.gutters.lg * 2}px;
     }
 
     > .left::before {

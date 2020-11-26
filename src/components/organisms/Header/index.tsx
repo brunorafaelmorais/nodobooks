@@ -1,6 +1,6 @@
-import Logo from '@/atoms/Logo'
-import Typography from '@/atoms/Typography'
-import { ContentBox } from '@/molecules/ContentBox/styles'
+import Logo from '@/components/atoms/Logo'
+import Typography from '@/components/atoms/Typography'
+import { ContentBox } from '@/components/molecules/ContentBox/styles'
 
 import { Container } from './styles'
 

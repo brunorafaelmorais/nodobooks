@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export interface IBook {
-  id: number
-  name: string
-}
+import { IBook } from '@/models/IBook'
 
 interface BooksState {
   list: IBook[]

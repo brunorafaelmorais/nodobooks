@@ -1,14 +1,64 @@
-import Banner from '@/atoms/Banner'
-import { ContentBox } from '@/molecules/ContentBox/styles'
+import { useState } from 'react'
 
-import SEO from '@/settings/SEO'
+import Banner from '@/components/atoms/Banner'
+import { ContentBox } from '@/components/molecules/ContentBox/styles'
+import BookList from '@/components/organisms/BookList'
+import MainLayout from '@/components/templates/MainLayout'
+import CategoryList from '@/components/organisms/CategoryList'
 
-import MainLayout from '@/templates/MainLayout'
+import SEO from '@/components/SEO'
 
 import { Container } from '@/styles/pages/Home.styles'
-import NavLink from '@/atoms/NavLink'
+
+import { IBook } from '@/models/IBook'
+import { ICategory } from '@/models/ICategory'
 
 export default function Home(): JSX.Element {
+  const [categories] = useState<ICategory[]>([
+    { id: 1, name: 'Bestsellers' },
+    { id: 2, name: 'Business' },
+    { id: 3, name: 'Education' },
+    { id: 4, name: 'Health & Wellbeing' }
+  ])
+  const [books] = useState<IBook[]>([
+    {
+      id: 1,
+      author: 'Kevin Kwan',
+      name: 'Crazy rich asians',
+      description:
+        'the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...',
+      image: '/book.jpg',
+      price: 4.99
+    },
+    {
+      id: 2,
+      author: 'Kevin Kwan',
+      name: 'Crazy rich asians',
+      description:
+        'the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...',
+      image: '/book.jpg',
+      price: 4.99
+    },
+    {
+      id: 3,
+      author: 'Kevin Kwan',
+      name: 'Crazy rich asians',
+      description:
+        'the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...',
+      image: '/book.jpg',
+      price: 4.99
+    },
+    {
+      id: 4,
+      author: 'Kevin Kwan',
+      name: 'Crazy rich asians',
+      description:
+        'the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...',
+      image: '/book.jpg',
+      price: 4.99
+    }
+  ])
+
   return (
     <MainLayout>
       <SEO title="Bookstore" />
@@ -17,14 +67,10 @@ export default function Home(): JSX.Element {
         <div className="container-list">
           <ContentBox className="content-box">
             <div className="left">
-              <NavLink to="/" text="All Categories" />
-              <NavLink isActive to="/" text="Bestsellers" />
-              <NavLink to="/" text="Art & Fashion" />
-              <NavLink to="/" text="Biography" />
-              <NavLink to="/" text="Business" />
+              <CategoryList categories={categories} />
             </div>
             <div className="right">
-              <span>right</span>
+              <BookList books={books} />
             </div>
           </ContentBox>
         </div>

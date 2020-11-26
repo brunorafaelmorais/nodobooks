@@ -44,7 +44,7 @@ export const Container = styled.div<ContainerProps>`
       }
 
       a:hover > span {
-        color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.primaryTint};
         text-decoration: underline;
       }
     `}

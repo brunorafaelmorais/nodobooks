@@ -1,7 +1,7 @@
 import { Container } from './styles'
 
-import Typography from '@/atoms/Typography'
-import { ContentBox } from '@/molecules/ContentBox/styles'
+import Typography from '@/components/atoms/Typography'
+import { ContentBox } from '@/components/molecules/ContentBox/styles'
 
 export default function Footer(): JSX.Element {
   return (

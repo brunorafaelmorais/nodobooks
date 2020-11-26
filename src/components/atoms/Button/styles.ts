@@ -15,6 +15,7 @@ export const Container = styled.button<Props>`
   font-weight: 700;
   line-height: 15px;
   min-width: 176px;
+  max-width: 100%;
   padding: 0 ${props => props.theme.gutters.sm}px;
   display: inline-flex;
   align-items: center;
