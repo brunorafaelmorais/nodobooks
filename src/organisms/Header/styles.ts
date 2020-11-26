@@ -6,4 +6,13 @@ export const Container = styled.header`
   > div {
     display: flex;
   }
+
+  .logoContainer {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logoContainer > .logoText {
+    margin-left: ${props => props.theme.gutters.sm}px;
+  }
 `

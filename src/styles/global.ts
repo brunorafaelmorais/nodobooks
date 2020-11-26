@@ -10,5 +10,7 @@ export default createGlobalStyle`
 
   body {
     font: 400 16px 'Open Sans', Arial, Helvetica, sans-serif;
+    color: ${props => props.theme.colors.textBlack};
+    overflow-x: hidden;
   }
 `

@@ -3,6 +3,7 @@ import { Container, Props as TypographyProps } from './styles'
 
 export interface Props extends TypographyProps {
   children: ReactNode
+  className?: string
 }
 
 export default function Typography({
@@ -12,6 +13,7 @@ export default function Typography({
   fontWeight = 400,
   align = 'left',
   fullWidth = false,
+  className,
   children
 }: Props): JSX.Element {
   return (
@@ -22,6 +24,7 @@ export default function Typography({
       align={align}
       fontWeight={fontWeight}
       fullWidth={fullWidth}
+      className={className}
     >
       {children}
     </Container>
