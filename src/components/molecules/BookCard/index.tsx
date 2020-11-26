@@ -38,7 +38,7 @@ export default function BookCard({ book }: Props): JSX.Element {
         >
           ${book.price}
         </Typography>
-        <Button className="buy-now" color="primary" outlined>
+        <Button type="button" className="buy-now" color="primary" outlined>
           Buy now
         </Button>
       </div>

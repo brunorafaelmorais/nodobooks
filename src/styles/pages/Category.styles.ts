@@ -4,6 +4,7 @@ export const Container = styled.div`
   .content-box {
     display: flex;
     align-items: flex-start;
+    padding-top: ${props => props.theme.gutters.xl}px;
     padding-bottom: ${props => props.theme.gutters.xl}px;
 
     > .left {

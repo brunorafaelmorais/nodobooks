@@ -12,13 +12,20 @@ export const Container = styled.div<ContainerProps>`
   transition: all 0.2s;
 
   a {
-    text-decoration: none;
+    max-width: 100%;
+    display: inline-flex;
   }
 
   a,
   span {
-    display: inline-flex;
-    transition: all 0.2s;
+    transition: all 0.1s;
+  }
+
+  span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   &::before {

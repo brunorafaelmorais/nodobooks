@@ -5,13 +5,22 @@ import { Container } from './styles'
 
 export type Props = {
   categories: ICategory[]
+  activeCategoryId?: string
 }
 
-export default function CategoryList({ categories }: Props): JSX.Element {
+export default function CategoryList({
+  activeCategoryId,
+  categories
+}: Props): JSX.Element {
   return (
     <Container>
       {categories.map(category => (
-        <NavLink key={category.id} to="#" text={category.name} />
+        <NavLink
+          key={category.id}
+          to={`/category/${category.id}`}
+          text={category.name}
+          isActive={activeCategoryId === String(category.id)}
+        />
       ))}
     </Container>
   )

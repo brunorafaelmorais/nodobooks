@@ -7,12 +7,17 @@ export const Container = styled.header`
     display: flex;
   }
 
-  .logoContainer {
+  .logo-container {
     display: inline-flex;
     align-items: center;
+    user-select: none;
   }
 
-  .logoContainer > .logoText {
+  .logo-container > .logoText {
     margin-left: ${props => props.theme.gutters.sm}px;
+  }
+
+  .link-to-home {
+    display: inline-flex;
   }
 `

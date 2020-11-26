@@ -13,4 +13,6 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.textBlack};
     overflow-x: hidden;
   }
+
+  a { text-decoration: none; }
 `

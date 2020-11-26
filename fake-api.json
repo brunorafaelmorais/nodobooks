@@ -1,0 +1,90 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Art & Fashion"
+    },
+    {
+      "id": 2,
+      "name": "Biography"
+    },
+    {
+      "id": 3,
+      "name": "Children's"
+    },
+    {
+      "id": 4,
+      "name": "Education"
+    },
+    {
+      "id": 5,
+      "name": "Fiction & Poetry"
+    },
+    {
+      "id": 6,
+      "name": "Film, TV & Drama"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "author": "Kevin Kwan",
+      "name": "Crazy rich asians",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "author": "Kevin Kwan",
+      "name": "The handmaid’s tale",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "author": "Tara Westover",
+      "name": "Brave new world",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 3
+    },
+    {
+      "id": 4,
+      "author": "Kevin Kwan",
+      "name": "Educated",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 4
+    },
+    {
+      "id": 5,
+      "author": "Kevin Kwan",
+      "name": "The weight of things",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 5
+    },
+    {
+      "id": 6,
+      "author": "Kevin Kwan",
+      "name": "Mothers stories",
+      "description":
+        "the outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip...",
+      "image": "/book.jpg",
+      "price": 4.99,
+      "category_id": 6
+    }
+  ]
+}
