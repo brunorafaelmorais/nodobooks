@@ -2,20 +2,20 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 import { Container } from './styles'
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
-  color?: 'gray'
-  variant?: 'contained'
+  color?: 'primary' | 'gray'
+  outlined?: boolean
 }
 
 export default function Button({
   children,
-  color,
-  variant,
+  color = 'primary',
+  outlined = false,
   ...rest
 }: Props): JSX.Element {
   return (
-    <Container color={color} variant={variant} {...rest}>
+    <Container color={color} outlined={outlined} {...rest}>
       {children}
     </Container>
   )

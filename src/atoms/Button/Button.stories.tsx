@@ -1,29 +1,28 @@
-import { storiesOf } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
+import { Meta } from '@storybook/react/types-6-0'
 
-import theme from '../../styles/theme'
-import Button from '.'
+import Button, { Props as ButtonProps } from '.'
 
-storiesOf('Button', module)
-  .addDecorator(story => <ThemeProvider theme={theme}>{story()}</ThemeProvider>)
-  .add('Default', () => <Button type="button">Default</Button>)
-  .add('Gray', () => (
-    <Button type="button" color="gray">
-      Gray
-    </Button>
-  ))
-  .add('Gray contained', () => (
-    <Button type="button" color="gray" variant="contained">
-      Gray
-    </Button>
-  ))
-  .add('Primary', () => (
-    <Button type="button" variant="contained">
-      Primary
-    </Button>
-  ))
-  .add('Disabled', () => (
-    <Button type="button" variant="contained" disabled>
-      Disabled
-    </Button>
-  ))
+export default {
+  title: 'Atoms/Buttons',
+  component: Button
+} as Meta
+
+export const Primary: React.FC<ButtonProps> = () => (
+  <Button color="primary">Primary</Button>
+)
+
+export const Gray: React.FC<ButtonProps> = () => (
+  <Button color="gray">Gray</Button>
+)
+
+export const PrimaryOulined: React.FC<ButtonProps> = () => (
+  <Button color="primary" outlined>
+    Primary Outlined
+  </Button>
+)
+
+export const GrayOulined: React.FC<ButtonProps> = () => (
+  <Button color="gray" outlined>
+    Gray Outlined
+  </Button>
+)
