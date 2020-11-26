@@ -1,27 +1,25 @@
 import { Meta } from '@storybook/react/types-6-0'
 
-import Button, { Props as ButtonProps } from '.'
+import Button, { Props } from '.'
 
 export default {
   title: 'Atoms/Buttons',
   component: Button
 } as Meta
 
-export const Primary: React.FC<ButtonProps> = () => (
+export const Primary: React.FC<Props> = () => (
   <Button color="primary">Primary</Button>
 )
 
-export const Gray: React.FC<ButtonProps> = () => (
-  <Button color="gray">Gray</Button>
-)
+export const Gray: React.FC<Props> = () => <Button color="gray">Gray</Button>
 
-export const PrimaryOulined: React.FC<ButtonProps> = () => (
+export const PrimaryOulined: React.FC<Props> = () => (
   <Button color="primary" outlined>
     Primary Outlined
   </Button>
 )
 
-export const GrayOulined: React.FC<ButtonProps> = () => (
+export const GrayOulined: React.FC<Props> = () => (
   <Button color="gray" outlined>
     Gray Outlined
   </Button>

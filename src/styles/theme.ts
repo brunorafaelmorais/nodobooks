@@ -3,7 +3,9 @@ export default {
     primary: '#4C3DB2',
     gray: '#666',
     textBlack: '#1C2A39',
-    textGray: '#5C6A79'
+    textGray: '#5C6A79',
+    error: '#C00000',
+    success: '#5EB833'
   },
   gutters: {
     xs: 8,

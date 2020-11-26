@@ -7,7 +7,7 @@ export const parameters = {
 }
 
 export const decorators = [
-  (Story) => (
+  Story => (
     <ThemeProvider theme={theme}>
       <Story />
     </ThemeProvider>

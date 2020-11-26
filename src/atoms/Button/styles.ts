@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
-type ContainerProps = {
-  color: 'primary' | 'gray'
+export type Props = {
+  color?: 'primary' | 'gray'
   outlined?: boolean
 }
 
-export const Container = styled.button<ContainerProps>`
+export const Container = styled.button<Props>`
   height: 45px;
   text-transform: uppercase;
   outline: none;

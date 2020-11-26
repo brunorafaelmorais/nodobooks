@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-import { TypoBody1 } from '@/atoms/Typography'
+import Typography from '@/atoms/Typography'
 import { ContentBox } from '@/molecules/ContentBox/styles'
 
 export default function Footer(): JSX.Element {
@@ -8,10 +8,16 @@ export default function Footer(): JSX.Element {
     <Container>
       <ContentBox>
         <div className="divider" />
-        <TypoBody1 fullWidth center color="textBlack">
+        <Typography
+          fullWidth
+          align="center"
+          fontSize={14}
+          font="Montserrat"
+          fontWeight={500}
+        >
           © 2020 - Nodo Bookstore and individual contributors. Content is
           available under these licenses.
-        </TypoBody1>
+        </Typography>
       </ContentBox>
     </Container>
   )
