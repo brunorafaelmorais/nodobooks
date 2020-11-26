@@ -41,14 +41,14 @@ export default function Home({ categories, books }: HomeProps): JSX.Element {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const [categories, books] = await Promise.all([
-    api.get<ICategory[]>('categories'),
-    api.get<IBook[]>('books')
+    api.get<{ rows: ICategory[] }>('categories'),
+    api.get<{ rows: IBook[] }>('books')
   ])
 
   return {
     props: {
-      categories: categories.data,
-      books: books.data
+      categories: categories.data.rows,
+      books: books.data.rows
     },
     revalidate: 10
   }

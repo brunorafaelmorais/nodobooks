@@ -61,9 +61,9 @@ export default function CategoryPage({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await api.get<ICategory[]>('categories')
+  const response = await api.get<{ rows: ICategory[] }>('categories')
 
-  const categories = response.data
+  const categories = response.data.rows
 
   const paths = categories.map(category => ({
     params: { id: String(category.id) }
@@ -76,14 +76,14 @@ export const getStaticProps: GetStaticProps<CategoryPageProps> = async ctx => {
   const { id } = ctx.params
 
   const [categories, books] = await Promise.all([
-    api.get<ICategory[]>('categories'),
-    api.get<IBook[]>(`books?category_id=${id}`)
+    api.get<{ rows: ICategory[] }>('categories'),
+    api.get<{ rows: IBook[] }>(`books?category=${id}`)
   ])
 
   return {
     props: {
-      categories: categories.data,
-      books: books.data
+      categories: categories.data.rows,
+      books: books.data.rows
     },
     revalidate: 60
   }

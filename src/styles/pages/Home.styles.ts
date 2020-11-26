@@ -34,4 +34,13 @@ export const Container = styled.div`
       padding-bottom: ${props => props.theme.gutters.lg}px;
     }
   }
+
+  @media screen and (min-width: 992px) {
+    .content-box {
+      > .left {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
 `

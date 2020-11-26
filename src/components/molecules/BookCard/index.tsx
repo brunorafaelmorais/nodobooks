@@ -1,7 +1,10 @@
+import Dotdotdot from 'react-dotdotdot'
+
 import Button from '@/components/atoms/Button'
 import Typography from '@/components/atoms/Typography'
 
 import { IBook } from '@/models/IBook'
+import formatCurrency from '@/utils/formatCurrency'
 
 import { Container } from './styles'
 
@@ -13,30 +16,32 @@ export default function BookCard({ book }: Props): JSX.Element {
   return (
     <Container>
       <div className="image">
-        <img src={book.image} alt={book.name} />
+        <img src={book.cover} alt={book.title} />
       </div>
       <div className="content">
         <Typography className="author" fontSize={10} color="textGray" fullWidth>
           {book.author}
         </Typography>
         <Typography fontSize={16} fontWeight={700} font="Montserrat">
-          {book.name}
+          {book.title}
         </Typography>
-        <Typography
-          className="description"
-          fontSize={10}
-          color="textGray"
-          fullWidth
-        >
-          {book.description}
-        </Typography>
+        <Dotdotdot clamp={4}>
+          <Typography
+            className="description"
+            fontSize={10}
+            color="textGray"
+            fullWidth
+          >
+            {book.description}
+          </Typography>
+        </Dotdotdot>
         <Typography
           className="price"
           fontSize={13}
           fontWeight={700}
           font="Montserrat"
         >
-          ${book.price}
+          {formatCurrency(book.price)}
         </Typography>
         <Button type="button" className="buy-now" color="primary" outlined>
           Buy now
