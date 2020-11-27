@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
@@ -44,8 +44,8 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
   const { purchaseModalIsOpen } = useTypedSelector(state => state.books)
   const dispatch = useAppDispatch()
 
-  const onSubmit = useCallback(
-    (formData: FormData) => {
+  const onSubmit: SubmitHandler<FormData> = useCallback(
+    formData => {
       try {
         console.log(formData)
         dispatch(
