@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:server": "json-server fake-api.json -p 3333",
+    "start:fake-api": "json-server --watch fake-api.json --port 3333",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

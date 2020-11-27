@@ -14,5 +14,7 @@ export default createGlobalStyle`
     overflow-x: hidden;
   }
 
+  p { margin: 0; }
+
   a { text-decoration: none; }
 `

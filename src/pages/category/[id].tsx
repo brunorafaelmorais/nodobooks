@@ -7,13 +7,13 @@ import { ContentBox } from '@/components/molecules/ContentBox/styles'
 import SEO from '@/components/SEO'
 import BookList from '@/components/organisms/BookList'
 import CategoryList from '@/components/organisms/CategoryList'
-import Typography from '@/components/atoms/Typography'
+import FallbackLoading from '@/components/atoms/FallbackLoading'
 
 import { Container } from '@/styles/pages/Category.styles'
 
 import { IBook } from '@/models/IBook'
-import api from '@/services/api'
 import { ICategory } from '@/models/ICategory'
+import api from '@/services/api'
 
 type CategoryPageProps = {
   categories: ICategory[]
@@ -34,26 +34,24 @@ export default function CategoryPage({
     setActiveCategoryId(id as string)
   }, [id])
 
+  if (router.isFallback) {
+    return <FallbackLoading text="Loading..." />
+  }
+
   return (
     <MainLayout>
       <SEO title="Bookstore" />
       <Container>
         <ContentBox className="content-box">
-          {router.isFallback ? (
-            <Typography>Loading...</Typography>
-          ) : (
-            <>
-              <div className="left">
-                <CategoryList
-                  activeCategoryId={activeCategoryId}
-                  categories={categories}
-                />
-              </div>
-              <div className="right">
-                <BookList books={books} />
-              </div>
-            </>
-          )}
+          <div className="left">
+            <CategoryList
+              activeCategoryId={activeCategoryId}
+              categories={categories}
+            />
+          </div>
+          <div className="right">
+            <BookList books={books} />
+          </div>
         </ContentBox>
       </Container>
     </MainLayout>
@@ -61,9 +59,9 @@ export default function CategoryPage({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await api.get<{ rows: ICategory[] }>('categories')
+  const response = await api.get<ICategory[]>('categories')
 
-  const categories = response.data.rows
+  const categories = response.data
 
   const paths = categories.map(category => ({
     params: { id: String(category.id) }
@@ -76,14 +74,14 @@ export const getStaticProps: GetStaticProps<CategoryPageProps> = async ctx => {
   const { id } = ctx.params
 
   const [categories, books] = await Promise.all([
-    api.get<{ rows: ICategory[] }>('categories'),
-    api.get<{ rows: IBook[] }>(`books?category=${id}`)
+    api.get<ICategory[]>('categories'),
+    api.get<IBook[]>(`books?category=${id}`)
   ])
 
   return {
     props: {
-      categories: categories.data.rows,
-      books: books.data.rows
+      categories: categories.data,
+      books: books.data
     },
     revalidate: 60
   }
