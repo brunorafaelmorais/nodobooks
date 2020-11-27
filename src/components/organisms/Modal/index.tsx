@@ -60,7 +60,7 @@ const Modal: React.ForwardRefRenderFunction<ModalHandles, Props> = (
       <Box>
         {title && (
           <Typography
-            className="title"
+            className="modal-title"
             fontSize={24}
             fontWeight={700}
             font="Montserrat"

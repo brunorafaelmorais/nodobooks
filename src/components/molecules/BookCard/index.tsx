@@ -11,9 +11,10 @@ import { Container } from './styles'
 
 export type Props = {
   book: IBook
+  handleBuy?: (book: IBook) => void
 }
 
-export default function BookCard({ book }: Props): JSX.Element {
+export default function BookCard({ book, handleBuy }: Props): JSX.Element {
   return (
     <Container>
       <div className="image">
@@ -54,7 +55,13 @@ export default function BookCard({ book }: Props): JSX.Element {
         >
           {formatCurrency(book.price)}
         </Typography>
-        <Button type="button" className="buy-now" color="primary" outlined>
+        <Button
+          onClick={() => handleBuy(book)}
+          type="button"
+          className="buy-now"
+          color="primary"
+          outlined
+        >
           Buy now
         </Button>
       </div>

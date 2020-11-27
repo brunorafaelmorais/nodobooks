@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  .title {
+  .modal-title {
     flex-shrink: 0;
     position: relative;
     padding-top: ${props => props.theme.gutters.sm}px;
@@ -30,7 +30,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 600px) {
-    .title {
+    .modal-title {
       padding-top: ${props => props.theme.gutters.md}px;
       padding-right: ${props => props.theme.gutters.md}px;
       padding-left: ${props => props.theme.gutters.md}px;

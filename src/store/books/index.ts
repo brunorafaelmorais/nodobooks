@@ -1,25 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { IBook } from '@/interfaces/IBook'
-
 interface BooksState {
-  list: IBook[]
+  purchaseModalIsOpen: boolean
 }
 
 const initialState: BooksState = {
-  list: []
+  purchaseModalIsOpen: false
 }
 
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    setBooks(state, action: PayloadAction<IBook[]>) {
-      state.list = action.payload
+    setPurchaseModalIsOpen(state, action: PayloadAction<boolean>) {
+      state.purchaseModalIsOpen = action.payload
     }
   }
 })
 
-export const { setBooks } = booksSlice.actions
+export const { setPurchaseModalIsOpen } = booksSlice.actions
 
 export default booksSlice.reducer
