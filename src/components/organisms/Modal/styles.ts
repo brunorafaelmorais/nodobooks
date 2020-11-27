@@ -1,15 +1,19 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+type ContainerProps = {
+  zIndex?: number
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: ${props => props.zIndex || 20};
 
   .modal-title {
     flex-shrink: 0;

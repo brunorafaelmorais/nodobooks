@@ -5,6 +5,7 @@ export const Container = styled.div`
   padding: ${props => props.theme.gutters.xs}px;
   display: flex;
   align-items: flex-start;
+  border-radius: 4px;
 
   > img {
     width: 80px;
@@ -12,6 +13,7 @@ export const Container = styled.div`
     object-fit: cover;
     flex-shrink: 0;
     margin-right: ${props => props.theme.gutters.xs}px;
+    border-radius: 4px;
   }
 
   > .content {

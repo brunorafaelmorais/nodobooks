@@ -26,11 +26,12 @@ export type ModalHandles = {
 type Props = {
   title?: string
   showCloseButton?: boolean
+  zIndex?: number
   children: ReactNode
 }
 
 const Modal: React.ForwardRefRenderFunction<ModalHandles, Props> = (
-  { title, showCloseButton = false, children },
+  { title, showCloseButton = false, zIndex, children },
   ref
 ) => {
   const [visible, setVisible] = useState(false)
@@ -55,7 +56,7 @@ const Modal: React.ForwardRefRenderFunction<ModalHandles, Props> = (
   if (!visible) return null
 
   return (
-    <Container>
+    <Container zIndex={zIndex}>
       <Overlay onClick={closeModal} />
       <Box>
         {title && (
