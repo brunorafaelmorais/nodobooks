@@ -1,32 +1,30 @@
-import Dotdotdot from 'react-dotdotdot'
-
 import Button from '@/components/atoms/Button'
-import Typography from '@/components/atoms/Typography'
 import { StarRating } from '@/components/atoms/StarRating'
+import Typography from '@/components/atoms/Typography'
 
 import { IBook } from '@/interfaces/IBook'
+
 import formatCurrency from '@/utils/formatCurrency'
 
 import { Container } from './styles'
 
-export type Props = {
+type Props = {
   book: IBook
-  handleBuy?: (book: IBook) => void
 }
 
-export default function BookCard({ book, handleBuy }: Props): JSX.Element {
+export default function BookDetailCard({ book }: Props): JSX.Element {
   return (
     <Container>
       <div className="image">
         <img src={book.cover} alt={book.title} />
       </div>
       <div className="content">
-        <Typography className="author" fontSize={10} color="textGray" fullWidth>
+        <Typography className="author" fontSize={12} color="textGray" fullWidth>
           {book.author}
         </Typography>
         <Typography
           className="book-title"
-          fontSize={16}
+          fontSize={24}
           fontWeight={700}
           font="Montserrat"
         >
@@ -35,37 +33,30 @@ export default function BookCard({ book, handleBuy }: Props): JSX.Element {
         <StarRating
           stars={book.stars}
           text={`${book.reviews} review`}
+          iconSize={24}
           className="rating"
         />
-        <Dotdotdot clamp={4}>
-          <Typography
-            className="book-description"
-            fontSize={10}
-            color="textGray"
-            fullWidth
-          >
-            {book.description}
-          </Typography>
-        </Dotdotdot>
         <Typography
           className="price"
-          fontSize={13}
+          fontSize={18}
           fontWeight={700}
           font="Montserrat"
         >
           {formatCurrency(book.price)}
         </Typography>
-        <div>
-          <Button
-            onClick={() => handleBuy(book)}
-            type="button"
-            className="buy-now"
-            color="primary"
-            outlined
-          >
+        <div className="container-button-buy">
+          <Button type="button" color="primary" outlined>
             Buy now
           </Button>
         </div>
+        <Typography
+          className="book-description"
+          fontSize={14}
+          color="textGray"
+          fullWidth
+        >
+          {book.description}
+        </Typography>
       </div>
     </Container>
   )

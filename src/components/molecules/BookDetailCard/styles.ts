@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   > .image {
     width: 212px;
@@ -25,12 +25,8 @@ export const Container = styled.div`
   }
 
   .book-description {
-    line-height: 14px;
+    line-height: 24px;
     margin: ${props => props.theme.gutters.sm}px 0;
-  }
-
-  .buy-now {
-    margin-top: ${props => props.theme.gutters.sm}px;
   }
 
   .book-title::first-letter {
@@ -44,5 +40,13 @@ export const Container = styled.div`
   .rating {
     margin-top: 4px;
     margin-left: -2px;
+  }
+
+  .price {
+    margin-top: ${props => props.theme.gutters.sm}px;
+  }
+
+  .container-button-buy {
+    margin-top: ${props => props.theme.gutters.sm}px;
   }
 `

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 type ContainerProps = {
   clipPathPercent: number
+  iconSize?: number
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -11,8 +12,8 @@ export const Container = styled.div<ContainerProps>`
   position: relative;
 
   > .star-container {
-    width: 80px;
-    height: 16px;
+    width: ${props => props.iconSize * 5}px;
+    height: ${props => props.iconSize}px;
     position: relative;
   }
 
