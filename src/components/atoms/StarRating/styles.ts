@@ -6,7 +6,7 @@ type ContainerProps = {
 }
 
 export const Container = styled.div<ContainerProps>`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   color: #f2c94c;
   position: relative;

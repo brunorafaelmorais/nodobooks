@@ -10,7 +10,11 @@ export const Container = styled.div`
     margin-right: ${props => props.theme.gutters.md}px;
     box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
 
-    > img {
+    > a {
+      display: block;
+    }
+
+    img {
       max-width: 100%;
       display: block;
       margin: auto;

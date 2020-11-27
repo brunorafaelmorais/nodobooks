@@ -42,7 +42,7 @@ export function StarRating({
         <Typography
           className="text"
           fontSize={10}
-          fontWeight={700}
+          fontWeight={400}
           color="textGray"
         >
           {text}

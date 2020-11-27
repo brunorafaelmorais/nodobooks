@@ -6,6 +6,7 @@ import { ContentBox } from '@/components/molecules/ContentBox/styles'
 import CategoryList from '@/components/organisms/CategoryList'
 import MainLayout from '@/components/templates/MainLayout'
 import FallbackLoading from '@/components/atoms/FallbackLoading'
+import PurchaseModal from '@/components/organisms/PurchaseModal'
 import SEO from '@/components/SEO'
 
 import { IBook } from '@/interfaces/IBook'
@@ -14,6 +15,9 @@ import { ICategory } from '@/interfaces/ICategory'
 import api from '@/services/api'
 
 import { Container } from '@/styles/pages/BookDetail.styles'
+import { useAppDispatch } from '@/store'
+import { useCallback } from 'react'
+import { setPurchaseModalIsOpen } from '@/store/books'
 
 type BookDetailProps = {
   book: IBook
@@ -25,6 +29,12 @@ export default function BookDetail({
   categories
 }: BookDetailProps): JSX.Element {
   const router = useRouter()
+
+  const dispatch = useAppDispatch()
+
+  const handleBuy = useCallback(() => {
+    dispatch(setPurchaseModalIsOpen(true))
+  }, [dispatch])
 
   if (router.isFallback) {
     return <FallbackLoading text="Loading..." />
@@ -42,10 +52,12 @@ export default function BookDetail({
             />
           </div>
           <div className="right">
-            <BookDetailCard book={book} />
+            <BookDetailCard handleBuy={handleBuy} book={book} />
           </div>
         </ContentBox>
       </Container>
+
+      <PurchaseModal book={book} />
     </MainLayout>
   )
 }
