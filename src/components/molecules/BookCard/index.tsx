@@ -2,8 +2,9 @@ import Dotdotdot from 'react-dotdotdot'
 
 import Button from '@/components/atoms/Button'
 import Typography from '@/components/atoms/Typography'
+import { StarRating } from '@/components/atoms/StarRating'
 
-import { IBook } from '@/models/IBook'
+import { IBook } from '@/interfaces/IBook'
 import formatCurrency from '@/utils/formatCurrency'
 
 import { Container } from './styles'
@@ -22,9 +23,19 @@ export default function BookCard({ book }: Props): JSX.Element {
         <Typography className="author" fontSize={10} color="textGray" fullWidth>
           {book.author}
         </Typography>
-        <Typography fontSize={16} fontWeight={700} font="Montserrat">
+        <Typography
+          className="title"
+          fontSize={16}
+          fontWeight={700}
+          font="Montserrat"
+        >
           {book.title}
         </Typography>
+        <StarRating
+          stars={book.stars}
+          text={`${book.reviews} review`}
+          className="rating"
+        />
         <Dotdotdot clamp={4}>
           <Typography
             className="description"

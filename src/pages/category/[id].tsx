@@ -11,8 +11,8 @@ import FallbackLoading from '@/components/atoms/FallbackLoading'
 
 import { Container } from '@/styles/pages/Category.styles'
 
-import { IBook } from '@/models/IBook'
-import { ICategory } from '@/models/ICategory'
+import { IBook } from '@/interfaces/IBook'
+import { ICategory } from '@/interfaces/ICategory'
 import api from '@/services/api'
 
 type CategoryPageProps = {

@@ -1,4 +1,4 @@
-import { IBook } from '@/models/IBook'
+import { IBook } from '@/interfaces/IBook'
 
 import BookCard from '@/components/molecules/BookCard'
 

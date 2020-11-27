@@ -1,5 +1,5 @@
 import NavLink from '@/components/atoms/NavLink'
-import { ICategory } from '@/models/ICategory'
+import { ICategory } from '@/interfaces/ICategory'
 
 import { Container } from './styles'
 

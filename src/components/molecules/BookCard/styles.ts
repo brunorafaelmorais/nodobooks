@@ -33,7 +33,16 @@ export const Container = styled.div`
     margin-top: ${props => props.theme.gutters.sm}px;
   }
 
+  .title::first-letter {
+    text-transform: capitalize;
+  }
+
   .author {
     margin-bottom: 4px;
+  }
+
+  .rating {
+    margin-top: 4px;
+    margin-left: -2px;
   }
 `

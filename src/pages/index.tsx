@@ -10,8 +10,8 @@ import SEO from '@/components/SEO'
 
 import { Container } from '@/styles/pages/Home.styles'
 
-import { IBook } from '@/models/IBook'
-import { ICategory } from '@/models/ICategory'
+import { IBook } from '@/interfaces/IBook'
+import { ICategory } from '@/interfaces/ICategory'
 
 import api from '@/services/api'
 
