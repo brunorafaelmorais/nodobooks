@@ -16,6 +16,7 @@ import { setPurchaseModalIsOpen } from '@/store/books'
 import Modal, { ModalHandles } from '../Modal'
 
 import { ContainerButtons, FormContainer } from './styles'
+import { addFeedbackMessage } from '@/store/feedback'
 
 type Props = {
   book: IBook
@@ -43,9 +44,33 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
   const { purchaseModalIsOpen } = useTypedSelector(state => state.books)
   const dispatch = useAppDispatch()
 
-  const onSubmit = useCallback((formData: FormData) => {
-    console.log(formData)
-  }, [])
+  const onSubmit = useCallback(
+    (formData: FormData) => {
+      try {
+        console.log(formData)
+        dispatch(
+          addFeedbackMessage({
+            title: 'Buy now',
+            type: 'success',
+            text:
+              'Your purchase was successfully sent! Thank you for using our store.'
+          })
+        )
+      } catch (err) {
+        dispatch(
+          addFeedbackMessage({
+            title: 'Buy now',
+            type: 'error',
+            text: 'There was a mistake sending your purchase, try again later.'
+          })
+        )
+      } finally {
+        modalRef.current?.closeModal()
+        dispatch(setPurchaseModalIsOpen(false))
+      }
+    },
+    [dispatch]
+  )
 
   useEffect(() => {
     if (purchaseModalIsOpen) {

@@ -1,9 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit'
 import { createSelectorHook } from 'react-redux'
 
-import books from '@/store/books'
+import books from './books'
+import feedback from './feedback'
 
-const rootReducer = combineReducers({ books })
+const rootReducer = combineReducers({ books, feedback })
 
 export type RootState = ReturnType<typeof rootReducer>
 
