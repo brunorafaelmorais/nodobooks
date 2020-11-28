@@ -85,7 +85,7 @@ export const ContainerCloseButton = styled.div`
   padding-bottom: ${props => props.theme.gutters.sm}px;
   padding-left: ${props => props.theme.gutters.sm}px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   position: relative;
 
   &::before {
@@ -102,6 +102,8 @@ export const ContainerCloseButton = styled.div`
     padding-right: ${props => props.theme.gutters.md}px;
     padding-bottom: ${props => props.theme.gutters.md}px;
     padding-left: ${props => props.theme.gutters.md}px;
+    flex-direction: row;
+    justify-content: flex-end;
 
     &::before {
       height: ${props => props.theme.gutters.md}px;

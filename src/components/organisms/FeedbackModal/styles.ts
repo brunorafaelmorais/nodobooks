@@ -9,8 +9,9 @@ export const Container = styled.div`
 export const MessageBox = styled.div`
   max-width: 572px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin: ${props => props.theme.gutters.xl}px 0;
+  margin: ${props => props.theme.gutters.md}px 0;
 
   > .icon {
     width: 120px;
@@ -28,5 +29,18 @@ export const MessageBox = styled.div`
   > .text {
     line-height: 36px;
     flex: 1 1;
+  }
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    align-items: center;
+    margin: ${props => props.theme.gutters.xl}px 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    > .text {
+      text-align: center;
+      margin-top: ${props => props.theme.gutters.md}px;
+    }
   }
 `

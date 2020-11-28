@@ -64,7 +64,7 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
             title: 'Buy now',
             type: 'success',
             text:
-              'Your book purchase has been sent successfully! Thank you for using our store.'
+              'Your purchase was successfully sent! Thank you for using our store.'
           })
         )
       } catch (err) {
