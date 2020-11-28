@@ -5,6 +5,8 @@ export const Container = styled.header`
 
   > div {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo-container {
