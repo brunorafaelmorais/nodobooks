@@ -26,12 +26,7 @@ export default function BookDetailCard({
         <Typography className="author" fontSize={12} color="textGray" fullWidth>
           {book.author}
         </Typography>
-        <Typography
-          className="book-title"
-          fontSize={24}
-          fontWeight={700}
-          font="Montserrat"
-        >
+        <Typography fontSize={24} fontWeight={700} font="Montserrat" fullWidth>
           {book.title}
         </Typography>
         <StarRating

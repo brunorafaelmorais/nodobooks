@@ -29,10 +29,6 @@ export const Container = styled.div`
     margin: ${props => props.theme.gutters.sm}px 0;
   }
 
-  .book-title::first-letter {
-    text-transform: capitalize;
-  }
-
   .author {
     margin-bottom: 4px;
   }

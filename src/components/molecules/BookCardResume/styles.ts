@@ -25,10 +25,6 @@ export const Container = styled.div`
       margin: 4px 0;
     }
 
-    .book-title::first-letter {
-      text-transform: capitalize;
-    }
-
     .book-description {
       margin: ${props => props.theme.gutters.xs}px 0;
     }

@@ -23,12 +23,7 @@ export default function BookCardResume({
         <Typography className="author" fontSize={10} color="textGray" fullWidth>
           {book.author}
         </Typography>
-        <Typography
-          className="book-title"
-          fontSize={16}
-          fontWeight={700}
-          font="Montserrat"
-        >
+        <Typography fontSize={16} fontWeight={700} font="Montserrat" fullWidth>
           {book.title}
         </Typography>
         <StarRating

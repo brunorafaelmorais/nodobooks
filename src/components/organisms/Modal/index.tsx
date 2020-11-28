@@ -6,7 +6,10 @@ import {
   ReactNode
 } from 'react'
 
+import useKeypress from '@/hooks/useKeypress'
+
 import Typography from '@/components/atoms/Typography'
+import Button from '@/components/atoms/Button'
 
 import {
   Box,
@@ -15,8 +18,6 @@ import {
   Content,
   ContainerCloseButton
 } from './styles'
-import Button from '@/components/atoms/Button'
-import useKeypress from '@/hooks/useKeypress'
 
 export type ModalHandles = {
   openModal(): void

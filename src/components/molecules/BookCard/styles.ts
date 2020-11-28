@@ -49,10 +49,6 @@ export const Container = styled.div`
     height: 38px;
   }
 
-  .book-title::first-letter {
-    text-transform: capitalize;
-  }
-
   .author {
     margin-bottom: 4px;
   }
