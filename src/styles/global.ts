@@ -17,4 +17,8 @@ export default createGlobalStyle`
   p { margin: 0; }
 
   a { text-decoration: none; }
+
+  .no-sroll {
+    overflow: hidden;
+  }
 `
