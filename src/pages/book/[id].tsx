@@ -8,6 +8,7 @@ import CategoryList from '@/components/organisms/CategoryList'
 import MainLayout from '@/components/templates/MainLayout'
 import FallbackLoading from '@/components/atoms/FallbackLoading'
 import PurchaseModal from '@/components/organisms/PurchaseModal'
+
 import SEO from '@/components/SEO'
 
 import { IBook, ICategory, IResponseList } from '@/interfaces'
@@ -17,7 +18,8 @@ import api from '@/services/api'
 import { Container } from '@/styles/pages/BookDetail.styles'
 
 import { useAppDispatch } from '@/store'
-import { setPurchaseModalIsOpen } from '@/store/books'
+import { setPurchaseModalIsOpen } from '@/store/ui'
+import { useTypedSelector } from '@/store/rootReducer'
 
 type BookDetailProps = {
   book: IBook
@@ -30,6 +32,8 @@ export default function BookDetail({
 }: BookDetailProps): JSX.Element {
   const router = useRouter()
 
+  const { categoriesAsideIsOpen } = useTypedSelector(state => state.ui)
+
   const dispatch = useAppDispatch()
 
   const handleBuy = useCallback(() => {
@@ -41,24 +45,29 @@ export default function BookDetail({
   }
 
   return (
-    <MainLayout>
-      <SEO title="Bookstore" />
-      <Container>
-        <ContentBox className="content-box">
-          <div className="left">
-            <CategoryList
-              activeCategoryId={String(book.category)}
-              categories={categories}
-            />
-          </div>
-          <div className="right">
-            <BookDetailCard handleBuy={handleBuy} book={book} />
-          </div>
-        </ContentBox>
-      </Container>
-
+    <>
+      <MainLayout>
+        <SEO
+          title={book.title}
+          image={book.cover}
+          description={book.description}
+        />
+        <Container>
+          <ContentBox className="content-box">
+            <div className={`left ${categoriesAsideIsOpen ? 'show' : ''}`}>
+              <CategoryList
+                activeCategoryId={String(book.category)}
+                categories={categories}
+              />
+            </div>
+            <div className="right">
+              <BookDetailCard handleBuy={handleBuy} book={book} />
+            </div>
+          </ContentBox>
+        </Container>
+      </MainLayout>
       <PurchaseModal book={book} />
-    </MainLayout>
+    </>
   )
 }
 

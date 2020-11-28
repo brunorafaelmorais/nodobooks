@@ -62,6 +62,7 @@ export default function BookCard({ book, handleBuy }: Props): JSX.Element {
               fontSize={13}
               fontWeight={700}
               font="Montserrat"
+              fullWidth
             >
               {formatCurrency(book.price)}
             </Typography>

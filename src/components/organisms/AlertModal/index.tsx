@@ -2,17 +2,17 @@ import { useEffect, useRef } from 'react'
 
 import Typography from '@/components/atoms/Typography'
 
-import { IFeedbackMessage } from '@/interfaces'
+import { IAlertMessage } from '@/interfaces'
 
 import Modal, { ModalHandles } from '../Modal'
 
 import { Container, MessageBox } from './styles'
 import { useTypedSelector } from '@/store/rootReducer'
 import { useAppDispatch } from '@/store'
-import { setFeedbackModalIsOpen } from '@/store/feedback'
+import { setAlertModalIsOpen } from '@/store/alert'
 
 type Props = {
-  message: IFeedbackMessage
+  message: IAlertMessage
 }
 
 const icons = {
@@ -20,22 +20,22 @@ const icons = {
   error: <img src="/ico_error.svg" alt="error icon" />
 }
 
-export default function FeedbackModal({ message }: Props): JSX.Element {
+export default function AlertModal({ message }: Props): JSX.Element {
   const modalRef = useRef<ModalHandles>(null)
 
   const dispatch = useAppDispatch()
 
-  const { feedbackModalIsOpen } = useTypedSelector(state => state.feedback)
+  const { alertModalIsOpen } = useTypedSelector(state => state.alert)
 
   useEffect(() => {
-    if (feedbackModalIsOpen) {
+    if (alertModalIsOpen) {
       modalRef.current?.openModal()
     }
 
     return () => {
-      dispatch(setFeedbackModalIsOpen(false))
+      dispatch(setAlertModalIsOpen(false))
     }
-  }, [feedbackModalIsOpen, dispatch])
+  }, [alertModalIsOpen, dispatch])
 
   return (
     <Modal ref={modalRef} showCloseButton title={message.title} zIndex={21}>

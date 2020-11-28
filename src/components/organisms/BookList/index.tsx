@@ -5,7 +5,7 @@ import BookCard from '@/components/molecules/BookCard'
 import { IBook } from '@/interfaces'
 
 import { useAppDispatch } from '@/store'
-import { setPurchaseModalIsOpen } from '@/store/books'
+import { setPurchaseModalIsOpen } from '@/store/ui'
 
 import { Container } from './styles'
 import PurchaseModal from '../PurchaseModal'
@@ -27,12 +27,13 @@ export default function BookList({ books }: Props): JSX.Element {
   )
 
   return (
-    <Container>
-      {books.map(book => (
-        <BookCard handleBuy={handleBuy} key={book.id} book={book} />
-      ))}
-
+    <>
+      <Container>
+        {books.map(book => (
+          <BookCard handleBuy={handleBuy} key={book.id} book={book} />
+        ))}
+      </Container>
       <PurchaseModal book={book} />
-    </Container>
+    </>
   )
 }

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 500px;
   position: relative;
 
   > button {
@@ -47,5 +46,9 @@ export const Container = styled.div`
     &:-moz-placeholder {
       color: #fff;
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: 500px;
   }
 `

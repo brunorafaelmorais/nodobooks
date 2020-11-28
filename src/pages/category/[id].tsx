@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import MainLayout from '@/components/templates/MainLayout'
 import FallbackLoading from '@/components/atoms/FallbackLoading'
 import CategoriesAndBooksList from '@/components/organisms/CategoriesAndBooksList'
+import Banner from '@/components/atoms/Banner'
 
 import SEO from '@/components/SEO'
 
@@ -41,6 +42,7 @@ export default function CategoryPage({
     <MainLayout>
       <SEO title="Bookstore" />
       <Container>
+        <Banner path="/banner.jpg" />
         <CategoriesAndBooksList
           activeCategoryId={activeCategoryId}
           categories={categories}

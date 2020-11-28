@@ -11,11 +11,11 @@ import { IBook, IBuyDTO } from '@/interfaces'
 
 import { useTypedSelector } from '@/store/rootReducer'
 import { useAppDispatch } from '@/store'
-import { setPurchaseModalIsOpen } from '@/store/books'
+import { setPurchaseModalIsOpen } from '@/store/ui'
 
 import Modal, { ModalHandles } from '../Modal'
 
-import { addFeedbackMessage } from '@/store/feedback'
+import { addAlertMessage } from '@/store/alert'
 
 import api from '@/services/api'
 
@@ -44,7 +44,7 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
 
   const modalRef = useRef<ModalHandles>(null)
 
-  const { purchaseModalIsOpen } = useTypedSelector(state => state.books)
+  const { purchaseModalIsOpen } = useTypedSelector(state => state.ui)
   const dispatch = useAppDispatch()
 
   const onSubmit: SubmitHandler<FormData> = useCallback(
@@ -60,7 +60,7 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
         await api.post('buy', payload)
 
         dispatch(
-          addFeedbackMessage({
+          addAlertMessage({
             title: 'Buy now',
             type: 'success',
             text:
@@ -69,7 +69,7 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
         )
       } catch (err) {
         dispatch(
-          addFeedbackMessage({
+          addAlertMessage({
             title: 'Buy now',
             type: 'error',
             text: 'There was a mistake sending your purchase, try again later.'

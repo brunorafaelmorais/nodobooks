@@ -1,5 +1,5 @@
 export * from './IBook'
 export * from './ICategory'
-export * from './IFeedbackMessage'
+export * from './IAlertMessage'
 export * from './IResponseList'
 export * from './IBuyDTO'

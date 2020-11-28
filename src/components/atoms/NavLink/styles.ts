@@ -13,7 +13,9 @@ export const Container = styled.div<ContainerProps>`
 
   a {
     max-width: 100%;
-    display: inline-flex;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   a,

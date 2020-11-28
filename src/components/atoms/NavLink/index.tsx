@@ -8,17 +8,19 @@ export type Props = {
   to: string
   text: string
   isActive?: boolean
+  handleClick?: () => void
 }
 
 export default function NavLink({
   to,
   text,
-  isActive = false
+  isActive = false,
+  handleClick
 }: Props): JSX.Element {
   return (
     <Container isActive={isActive}>
       <Link href={to}>
-        <a>
+        <a onClick={handleClick}>
           <Typography
             fontWeight={isActive ? 700 : 400}
             fontSize={isActive ? 16 : 12}

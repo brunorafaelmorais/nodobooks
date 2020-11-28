@@ -1,6 +1,7 @@
 import { ContentBox } from '@/components/molecules/ContentBox/styles'
 
 import { IBook, ICategory } from '@/interfaces'
+import { useTypedSelector } from '@/store/rootReducer'
 import BookList from '../BookList'
 import CategoryList from '../CategoryList'
 
@@ -19,10 +20,12 @@ export default function CategoriesAndBooksList({
   activeCategoryId,
   className
 }: Props): JSX.Element {
+  const { categoriesAsideIsOpen } = useTypedSelector(state => state.ui)
+
   return (
     <Container className={className}>
       <ContentBox className="content-box">
-        <div className="left">
+        <div className={`left ${categoriesAsideIsOpen ? 'show' : ''}`}>
           <CategoryList
             activeCategoryId={activeCategoryId}
             categories={categories}

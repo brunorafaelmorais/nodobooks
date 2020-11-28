@@ -14,7 +14,6 @@ export const Container = styled.button<Props>`
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
-  min-width: 176px;
   max-width: 100%;
   padding: 0 ${props => props.theme.gutters.sm}px;
   display: inline-flex;
@@ -75,4 +74,8 @@ export const Container = styled.button<Props>`
         color: #fff;
       }
     `}
+
+  @media screen and (min-width: 1200px) {
+    min-width: 176px;
+  }
 `

@@ -39,17 +39,17 @@ const Modal: React.ForwardRefRenderFunction<ModalHandles, Props> = (
 
   useKeypress('Escape', () => {
     setVisible(false)
-    document.body.classList.remove('no-sroll')
+    document.body.style.overflowY = 'auto'
   })
 
   const openModal = useCallback(() => {
     setVisible(true)
-    document.body.classList.add('no-sroll')
+    document.body.style.overflowY = 'hidden'
   }, [])
 
   const closeModal = useCallback(() => {
     setVisible(false)
-    document.body.classList.remove('no-sroll')
+    document.body.style.overflowY = 'auto'
   }, [])
 
   useImperativeHandle(ref, () => ({

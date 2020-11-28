@@ -19,10 +19,7 @@ export default function BookDetailCard({
 }: Props): JSX.Element {
   return (
     <Container>
-      <div className="image">
-        <img src={book.cover} alt={book.title} />
-      </div>
-      <div className="content">
+      <div className="info-mobile">
         <Typography className="author" fontSize={12} color="textGray" fullWidth>
           {book.author}
         </Typography>
@@ -35,6 +32,35 @@ export default function BookDetailCard({
           iconSize={24}
           className="rating"
         />
+      </div>
+      <div className="image">
+        <img src={book.cover} alt={book.title} />
+      </div>
+      <div className="content">
+        <div className="info-desktop">
+          <Typography
+            className="author"
+            fontSize={12}
+            color="textGray"
+            fullWidth
+          >
+            {book.author}
+          </Typography>
+          <Typography
+            fontSize={24}
+            fontWeight={700}
+            font="Montserrat"
+            fullWidth
+          >
+            {book.title}
+          </Typography>
+          <StarRating
+            stars={book.stars}
+            text={`${book.reviews} review`}
+            iconSize={24}
+            className="rating"
+          />
+        </div>
         <Typography
           className="price"
           fontSize={18}

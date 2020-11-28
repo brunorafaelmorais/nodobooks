@@ -17,14 +17,12 @@ function SEO({
 }: Props): JSX.Element {
   const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? '| Nodobooks' : ''}`
 
-  const pageImage = `${process.env.NEXT_PUBLIC_SITE_URL}/${image}`
-
   return (
     <Head>
       <title>{pageTitle}</title>
 
       {description && <meta name="description" content={description} />}
-      {image && <meta name="image" content={pageImage} />}
+      {image && <meta name="image" content={image} />}
       {!shouldIndexPage && <meta name="robots" content="noindex,nofollow" />}
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
