@@ -5,7 +5,7 @@ import * as yup from 'yup'
 
 import BookCardResume from '@/components/molecules/BookCardResume'
 import Button from '@/components/atoms/Button'
-import Input from '@/components/Input'
+import Input from '@/components/atoms/Input'
 
 import { IBook } from '@/interfaces/IBook'
 

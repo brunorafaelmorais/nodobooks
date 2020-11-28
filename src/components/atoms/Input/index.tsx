@@ -1,6 +1,6 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
+import Typography from '../Typography'
 
-import Typography from '../atoms/Typography'
 import { Container } from './styles'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
