@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 import Typography from '@/components/atoms/Typography'
 
-import { IFeedbackMessage } from '@/interfaces/IFeedbackMessage'
+import { IFeedbackMessage } from '@/interfaces'
 
 import Modal, { ModalHandles } from '../Modal'
 

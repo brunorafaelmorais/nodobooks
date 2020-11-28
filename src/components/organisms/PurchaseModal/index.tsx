@@ -7,7 +7,7 @@ import BookCardResume from '@/components/molecules/BookCardResume'
 import Button from '@/components/atoms/Button'
 import Input from '@/components/atoms/Input'
 
-import { IBook } from '@/interfaces/IBook'
+import { IBook, IBuyDTO } from '@/interfaces'
 
 import { useTypedSelector } from '@/store/rootReducer'
 import { useAppDispatch } from '@/store'
@@ -15,8 +15,11 @@ import { setPurchaseModalIsOpen } from '@/store/books'
 
 import Modal, { ModalHandles } from '../Modal'
 
-import { ContainerButtons, FormContainer } from './styles'
 import { addFeedbackMessage } from '@/store/feedback'
+
+import api from '@/services/api'
+
+import { ContainerButtons, FormContainer } from './styles'
 
 type Props = {
   book: IBook
@@ -25,7 +28,7 @@ type Props = {
 type FormData = {
   name: string
   email: string
-  phone: number
+  phone: string
 }
 
 const schema = yup.object().shape({
@@ -45,15 +48,23 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
   const dispatch = useAppDispatch()
 
   const onSubmit: SubmitHandler<FormData> = useCallback(
-    formData => {
+    async formData => {
       try {
-        console.log(formData)
+        const payload: IBuyDTO = {
+          data: {
+            ...formData,
+            product_id: book.id
+          }
+        }
+
+        await api.post('buy', payload)
+
         dispatch(
           addFeedbackMessage({
             title: 'Buy now',
             type: 'success',
             text:
-              'Your purchase was successfully sent! Thank you for using our store.'
+              'Your book purchase has been sent successfully! Thank you for using our store.'
           })
         )
       } catch (err) {
@@ -69,7 +80,7 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
         dispatch(setPurchaseModalIsOpen(false))
       }
     },
-    [dispatch]
+    [dispatch, book.id]
   )
 
   useEffect(() => {

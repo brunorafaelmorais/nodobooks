@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { v4 as uuid } from 'uuid'
 
-import { IFeedbackMessage } from '@/interfaces/IFeedbackMessage'
+import { IFeedbackMessage } from '@/interfaces'
 
 interface FeedbackState {
   message: IFeedbackMessage

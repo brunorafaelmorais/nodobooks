@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
@@ -9,14 +10,13 @@ import FallbackLoading from '@/components/atoms/FallbackLoading'
 import PurchaseModal from '@/components/organisms/PurchaseModal'
 import SEO from '@/components/SEO'
 
-import { IBook } from '@/interfaces/IBook'
-import { ICategory } from '@/interfaces/ICategory'
+import { IBook, ICategory, IResponseList } from '@/interfaces'
 
 import api from '@/services/api'
 
 import { Container } from '@/styles/pages/BookDetail.styles'
+
 import { useAppDispatch } from '@/store'
-import { useCallback } from 'react'
 import { setPurchaseModalIsOpen } from '@/store/books'
 
 type BookDetailProps = {
@@ -63,9 +63,9 @@ export default function BookDetail({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await api.get<IBook[]>('books')
+  const response = await api.get<IResponseList<IBook>>('books')
 
-  const books = response.data
+  const books = response.data.rows
 
   const paths = books.map(book => ({
     params: { id: String(book.id) }
@@ -78,14 +78,14 @@ export const getStaticProps: GetStaticProps<BookDetailProps> = async ctx => {
   const { id } = ctx.params
 
   const [categories, book] = await Promise.all([
-    api.get<ICategory[]>('categories'),
-    api.get<IBook>(`books/${id}`)
+    api.get<IResponseList<ICategory>>('categories'),
+    api.get<{ book: IBook }>(`books/${id}`)
   ])
 
   return {
     props: {
-      categories: categories.data,
-      book: book.data
+      categories: categories.data.rows,
+      book: book.data.book
     },
     revalidate: 60
   }

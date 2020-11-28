@@ -10,8 +10,7 @@ import SEO from '@/components/SEO'
 
 import { Container } from '@/styles/pages/Home.styles'
 
-import { IBook } from '@/interfaces/IBook'
-import { ICategory } from '@/interfaces/ICategory'
+import { IBook, ICategory, IResponseList } from '@/interfaces'
 
 import api from '@/services/api'
 
@@ -41,14 +40,14 @@ export default function Home({ categories, books }: HomeProps): JSX.Element {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const [categories, books] = await Promise.all([
-    api.get<ICategory[]>('categories'),
-    api.get<IBook[]>('books')
+    api.get<IResponseList<ICategory>>('categories'),
+    api.get<IResponseList<IBook>>('books')
   ])
 
   return {
     props: {
-      categories: categories.data,
-      books: books.data
+      categories: categories.data.rows,
+      books: books.data.rows
     },
     revalidate: 10
   }

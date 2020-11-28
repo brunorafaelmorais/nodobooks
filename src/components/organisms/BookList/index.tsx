@@ -2,13 +2,13 @@ import { useCallback, useState } from 'react'
 
 import BookCard from '@/components/molecules/BookCard'
 
-import { IBook } from '@/interfaces/IBook'
+import { IBook } from '@/interfaces'
 
 import { useAppDispatch } from '@/store'
+import { setPurchaseModalIsOpen } from '@/store/books'
 
 import { Container } from './styles'
 import PurchaseModal from '../PurchaseModal'
-import { setPurchaseModalIsOpen } from '@/store/books'
 
 export type Props = {
   books: IBook[]

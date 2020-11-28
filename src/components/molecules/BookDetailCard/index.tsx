@@ -2,7 +2,7 @@ import Button from '@/components/atoms/Button'
 import { StarRating } from '@/components/atoms/StarRating'
 import Typography from '@/components/atoms/Typography'
 
-import { IBook } from '@/interfaces/IBook'
+import { IBook } from '@/interfaces'
 
 import formatCurrency from '@/utils/formatCurrency'
 
