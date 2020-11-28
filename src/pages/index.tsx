@@ -1,10 +1,8 @@
 import { GetStaticProps } from 'next'
 
 import Banner from '@/components/atoms/Banner'
-import { ContentBox } from '@/components/molecules/ContentBox/styles'
-import BookList from '@/components/organisms/BookList'
 import MainLayout from '@/components/templates/MainLayout'
-import CategoryList from '@/components/organisms/CategoryList'
+import CategoriesAndBooksList from '@/components/organisms/CategoriesAndBooksList'
 
 import SEO from '@/components/SEO'
 
@@ -25,14 +23,7 @@ export default function Home({ categories, books }: HomeProps): JSX.Element {
       <SEO title="Bookstore" />
       <Container>
         <Banner path="/banner.jpg" />
-        <ContentBox className="content-box">
-          <div className="left">
-            <CategoryList categories={categories} />
-          </div>
-          <div className="right">
-            <BookList books={books} />
-          </div>
-        </ContentBox>
+        <CategoriesAndBooksList categories={categories} books={books} />
       </Container>
     </MainLayout>
   )

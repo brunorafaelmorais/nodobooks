@@ -3,10 +3,9 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
 import MainLayout from '@/components/templates/MainLayout'
-import { ContentBox } from '@/components/molecules/ContentBox/styles'
-import BookList from '@/components/organisms/BookList'
-import CategoryList from '@/components/organisms/CategoryList'
 import FallbackLoading from '@/components/atoms/FallbackLoading'
+import CategoriesAndBooksList from '@/components/organisms/CategoriesAndBooksList'
+
 import SEO from '@/components/SEO'
 
 import { Container } from '@/styles/pages/Category.styles'
@@ -42,17 +41,12 @@ export default function CategoryPage({
     <MainLayout>
       <SEO title="Bookstore" />
       <Container>
-        <ContentBox className="content-box">
-          <div className="left">
-            <CategoryList
-              activeCategoryId={activeCategoryId}
-              categories={categories}
-            />
-          </div>
-          <div className="right">
-            <BookList books={books} />
-          </div>
-        </ContentBox>
+        <CategoriesAndBooksList
+          activeCategoryId={activeCategoryId}
+          categories={categories}
+          books={books}
+          className="category-and-books"
+        />
       </Container>
     </MainLayout>
   )
