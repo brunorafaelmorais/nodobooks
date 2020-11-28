@@ -29,6 +29,10 @@ export const Container = styled.div`
   }
 
   .book-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     line-height: 14px;
     margin: ${props => props.theme.gutters.sm}px 0;
   }

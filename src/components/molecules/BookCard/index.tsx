@@ -1,4 +1,3 @@
-import Dotdotdot from 'react-dotdotdot'
 import Link from 'next/link'
 
 import Button from '@/components/atoms/Button'
@@ -50,16 +49,14 @@ export default function BookCard({ book, handleBuy }: Props): JSX.Element {
               text={`${book.reviews} review`}
               className="rating"
             />
-            <Dotdotdot clamp={3}>
-              <Typography
-                className="book-description"
-                fontSize={10}
-                color="textGray"
-                fullWidth
-              >
-                {book.description}
-              </Typography>
-            </Dotdotdot>
+            <Typography
+              className="book-description"
+              fontSize={10}
+              color="textGray"
+              fullWidth
+            >
+              {book.description}
+            </Typography>
             <Typography
               className="price"
               fontSize={13}
