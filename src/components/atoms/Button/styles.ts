@@ -24,10 +24,6 @@ export const Container = styled.button<Props>`
   user-select: none;
   cursor: pointer;
 
-  & + & {
-    margin-left: ${props => props.theme.gutters.xs}px;
-  }
-
   ${props =>
     props.color === 'primary' &&
     css`

@@ -41,6 +41,14 @@ export const Container = styled.div`
     margin-top: ${props => props.theme.gutters.sm}px;
   }
 
+  .book-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 38px;
+  }
+
   .book-title::first-letter {
     text-transform: capitalize;
   }

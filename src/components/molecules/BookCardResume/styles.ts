@@ -8,8 +8,8 @@ export const Container = styled.div`
   border-radius: 4px;
 
   > img {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
     flex-shrink: 0;
     margin-right: ${props => props.theme.gutters.xs}px;
@@ -35,6 +35,13 @@ export const Container = styled.div`
 
     .rating {
       margin-left: -2px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    > img {
+      width: 80px;
+      height: 80px;
     }
   }
 `
