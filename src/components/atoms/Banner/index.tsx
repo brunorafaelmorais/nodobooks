@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-type Props = {
+export type Props = {
   path: string
   alt?: string
   className?: string
