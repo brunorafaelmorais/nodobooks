@@ -10,9 +10,10 @@ export const LangBox = styled.main`
   display: inline-flex;
 
   > a {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     transition: all 0.2s;
+    opacity: 0.5;
   }
 
   > a + a {
@@ -24,7 +25,8 @@ export const LangBox = styled.main`
     height: 100%;
   }
 
-  > a:not(.active) {
-    opacity: 0.5;
+  > a:hover,
+  > a.active {
+    opacity: 1;
   }
 `

@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Footer from '@/components/organisms/Footer'
 import Header from '@/components/organisms/Header'
@@ -8,7 +9,6 @@ import AlertModal from '@/components/organisms/AlertModal'
 import { useTypedSelector } from '@/store/rootReducer'
 
 import { Container, LangBox } from './styles'
-import { useRouter } from 'next/router'
 
 type Props = {
   children: ReactNode
