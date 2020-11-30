@@ -2,6 +2,7 @@ import { useCallback, useState, KeyboardEvent } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 
 import Logo from '@/components/atoms/Logo'
 import Typography from '@/components/atoms/Typography'
@@ -17,6 +18,8 @@ import { useTypedSelector } from '@/store/rootReducer'
 
 export default function Header(): JSX.Element {
   const [value, setValue] = useState('')
+
+  const { t } = useTranslation()
 
   const { categoriesAsideIsOpen } = useTypedSelector(state => state.ui)
 
@@ -72,7 +75,7 @@ export default function Header(): JSX.Element {
           onChange={event => setValue(event.target.value)}
           onKeyDown={handleKeyDownInputSearch}
           handleSearch={handleSearch}
-          placeholder="Type to search"
+          placeholder={t('type_to_search')}
         />
       </ContentBox>
     </Container>

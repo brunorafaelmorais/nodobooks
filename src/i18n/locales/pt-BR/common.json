@@ -1,0 +1,16 @@
+{
+  "buy_now": "Comprar",
+  "cancel": "Cancelar",
+  "send": "Enviar",
+  "type_to_search": "Digite para pesquisar",
+  "search_page": "Resultados da busca",
+
+  "field_name_label": "Nome",
+  "field_name_placeholder": "Digite seu nome aqui",
+
+  "field_email_label": "E-mail",
+  "field_email_placeholder": "Digite seu e-mail aqui",
+
+  "field_phone_label": "Telefone",
+  "field_phone_placeholder": "Digite seu telefone aqui"
+}

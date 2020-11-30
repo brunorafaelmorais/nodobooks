@@ -79,6 +79,6 @@ export const getStaticProps: GetStaticProps<CategoryPageProps> = async ctx => {
       categories: categories.data.rows,
       books: books.data.rows
     },
-    revalidate: 60
+    revalidate: 1
   }
 }

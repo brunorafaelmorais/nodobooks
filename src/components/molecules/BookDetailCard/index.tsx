@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import Button from '@/components/atoms/Button'
 import { StarRating } from '@/components/atoms/StarRating'
 import Typography from '@/components/atoms/Typography'
@@ -17,6 +19,8 @@ export default function BookDetailCard({
   book,
   handleBuy
 }: Props): JSX.Element {
+  const { t } = useTranslation()
+
   return (
     <Container>
       <div className="info-mobile">
@@ -71,7 +75,7 @@ export default function BookDetailCard({
         </Typography>
         <div className="container-button-buy">
           <Button onClick={handleBuy} type="button" color="primary" outlined>
-            Buy now
+            {t('buy_now')}
           </Button>
         </div>
         <Typography

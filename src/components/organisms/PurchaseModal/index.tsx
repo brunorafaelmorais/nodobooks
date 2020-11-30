@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -41,6 +42,8 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
   const { register, handleSubmit, errors } = useForm<FormData>({
     resolver: yupResolver(schema)
   })
+
+  const { t } = useTranslation()
 
   const modalRef = useRef<ModalHandles>(null)
 
@@ -98,33 +101,33 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
   }, [])
 
   return (
-    <Modal ref={modalRef} title="Buy now">
+    <Modal ref={modalRef} title={t('buy_now')}>
       <BookCardResume book={book} />
 
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
         <Input
-          label="Name"
+          label={t('field_name_label')}
           fieldName="name"
           type="text"
-          placeholder="Type your name here"
+          placeholder={t('field_name_placeholder')}
           ref={register}
           hasError={!!errors.name}
           error={errors.name?.message}
         />
         <Input
-          label="E-mail"
+          label={t('field_email_label')}
           fieldName="email"
           type="email"
-          placeholder="Type your e-mail here"
+          placeholder={t('field_email_placeholder')}
           ref={register}
           hasError={!!errors.email}
           error={errors.email?.message}
         />
         <Input
-          label="Phone"
+          label={t('field_phone_label')}
           fieldName="phone"
           type="tel"
-          placeholder="Type your phone here"
+          placeholder={t('field_phone_placeholder')}
           ref={register}
           hasError={!!errors.phone}
           error={errors.phone?.message}
@@ -137,9 +140,9 @@ export default function PurchaseModal({ book }: Props): JSX.Element {
             outlined
             color="gray"
           >
-            Cancel
+            {t('cancel')}
           </Button>
-          <Button type="submit">Send</Button>
+          <Button type="submit">{t('send')}</Button>
         </ContainerButtons>
       </FormContainer>
     </Modal>

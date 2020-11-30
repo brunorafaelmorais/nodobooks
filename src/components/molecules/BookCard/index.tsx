@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 import Button from '@/components/atoms/Button'
 import Typography from '@/components/atoms/Typography'
@@ -15,6 +16,8 @@ export type Props = {
 }
 
 export default function BookCard({ book, handleBuy }: Props): JSX.Element {
+  const { t } = useTranslation()
+
   return (
     <Container>
       <div className="image">
@@ -77,7 +80,7 @@ export default function BookCard({ book, handleBuy }: Props): JSX.Element {
             color="primary"
             outlined
           >
-            Buy now
+            {t('buy_now')}
           </Button>
         </div>
       </div>

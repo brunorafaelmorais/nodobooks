@@ -3,14 +3,13 @@ import { GetServerSideProps } from 'next'
 import SEO from '@/components/SEO'
 import MainLayout from '@/components/templates/MainLayout'
 import CategoriesAndBooksList from '@/components/organisms/CategoriesAndBooksList'
-import Typography from '@/components/atoms/Typography'
-import { ContentBox } from '@/components/molecules/ContentBox/styles'
 
 import { Container } from '@/styles/pages/Search.styles'
 
 import { IBook, ICategory, IResponseList } from '@/interfaces'
 
 import api from '@/services/api'
+import { useTranslation } from 'react-i18next'
 
 type SearchPageProps = {
   categories: ICategory[]
@@ -21,13 +20,12 @@ export default function SearchPage({
   categories,
   books
 }: SearchPageProps): JSX.Element {
+  const { t } = useTranslation()
+
   return (
     <MainLayout>
-      <SEO title="Search Results" />
+      <SEO title={t('search_page')} />
       <Container>
-        <ContentBox className="container-text-result">
-          <Typography color="textGray">{books.length} book(s) found</Typography>
-        </ContentBox>
         <CategoriesAndBooksList categories={categories} books={books} />
       </Container>
     </MainLayout>
