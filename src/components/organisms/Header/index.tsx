@@ -16,7 +16,7 @@ import { toggleCategoriesAside } from '@/store/ui'
 import { useTypedSelector } from '@/store/rootReducer'
 
 export default function Header(): JSX.Element {
-  const [searchValue, setSearchValue] = useState('')
+  const [value, setValue] = useState('')
 
   const { categoriesAsideIsOpen } = useTypedSelector(state => state.ui)
 
@@ -25,10 +25,10 @@ export default function Header(): JSX.Element {
   const router = useRouter()
 
   const handleSearch = useCallback(() => {
-    if (!searchValue) return
+    if (!value) return
 
-    router.push(`/books/search?query=${searchValue}`)
-  }, [searchValue, router])
+    router.push(`/books/search?value=${value}`)
+  }, [value, router])
 
   const handleKeyDownInputSearch = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
@@ -69,7 +69,7 @@ export default function Header(): JSX.Element {
         </div>
         <InputSearch
           className="input-search"
-          onChange={event => setSearchValue(event.target.value)}
+          onChange={event => setValue(event.target.value)}
           onKeyDown={handleKeyDownInputSearch}
           handleSearch={handleSearch}
           placeholder="Type to search"

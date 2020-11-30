@@ -35,11 +35,11 @@ export default function SearchPage({
 }
 
 export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ctx => {
-  const { query } = ctx.query
+  const { value } = ctx.query
 
   const [categories, books] = await Promise.all([
     api.get<IResponseList<ICategory>>('categories'),
-    api.get<IResponseList<IBook>>(`books/search?query=${query}`)
+    api.get<IResponseList<IBook>>(`books/search?query=${value}`)
   ])
 
   return {
