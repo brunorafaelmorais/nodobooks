@@ -3,11 +3,11 @@ import { Meta } from '@storybook/react/types-6-0'
 import Typography, { Props } from '.'
 
 export default {
-  title: 'Atoms/Typography',
+  title: 'Atoms',
   component: Typography
 } as Meta
 
-export const Variants: React.FC<Props> = () => (
+export const typography: React.FC<Props> = () => (
   <>
     <div>
       <Typography>Default</Typography>

@@ -3,7 +3,7 @@ import { FiSearch } from 'react-icons/fi'
 
 import { Container } from './styles'
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   className?: string
   handleSearch?: () => void
 }

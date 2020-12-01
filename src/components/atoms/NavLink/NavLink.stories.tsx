@@ -4,7 +4,7 @@ import { withNextRouter } from 'storybook-addon-next-router'
 import NavLink, { Props } from '.'
 
 export default {
-  title: 'Atoms/NavLink',
+  title: 'Atoms/Navlink',
   component: NavLink,
   decorators: [withNextRouter]
 } as Meta

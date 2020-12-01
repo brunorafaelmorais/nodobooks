@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0'
 import Banner, { Props } from '.'
 
 export default {
-  title: 'Atoms/Banner',
+  title: 'Atoms',
   component: Banner
 } as Meta
 

@@ -7,14 +7,14 @@ import Typography from '../Typography'
 
 import { Container } from './styles'
 
-type Props = {
+export type Props = {
   className?: string
   stars: number
   text?: string
   iconSize?: number
 }
 
-export function StarRating({
+export default function StarRating({
   className,
   stars,
   text,

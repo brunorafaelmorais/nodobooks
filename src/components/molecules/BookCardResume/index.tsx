@@ -1,5 +1,5 @@
 import Typography from '@/components/atoms/Typography'
-import { StarRating } from '@/components/atoms/StarRating'
+import StarRating from '@/components/atoms/StarRating'
 
 import { IBook } from '@/interfaces'
 

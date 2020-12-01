@@ -3,7 +3,7 @@ import Typography from '../Typography'
 
 import { Container } from './styles'
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string
   fieldName: string
   hasError?: boolean

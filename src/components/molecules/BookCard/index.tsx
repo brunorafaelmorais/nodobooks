@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import Button from '@/components/atoms/Button'
 import Typography from '@/components/atoms/Typography'
-import { StarRating } from '@/components/atoms/StarRating'
+import StarRating from '@/components/atoms/StarRating'
 
 import { IBook } from '@/interfaces'
 import formatCurrency from '@/utils/formatCurrency'

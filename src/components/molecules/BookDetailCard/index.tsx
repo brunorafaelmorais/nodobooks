@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
 import Button from '@/components/atoms/Button'
-import { StarRating } from '@/components/atoms/StarRating'
+import StarRating from '@/components/atoms/StarRating'
 import Typography from '@/components/atoms/Typography'
 
 import { IBook } from '@/interfaces'
