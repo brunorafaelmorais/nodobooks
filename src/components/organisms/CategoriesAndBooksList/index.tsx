@@ -7,7 +7,7 @@ import CategoryList from '../CategoryList'
 
 import { Container } from './styles'
 
-type Props = {
+export type Props = {
   categories: ICategory[]
   books: IBook[]
   activeCategoryId?: string

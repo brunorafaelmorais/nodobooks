@@ -8,5 +8,5 @@ export default {
 } as Meta
 
 export const banner: React.FC<Props> = () => (
-  <Banner path="https://picsum.photos/1440/800" alt="Banner" />
+  <Banner path="/banner.jpg" alt="Banner" />
 )

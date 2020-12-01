@@ -1,7 +1,7 @@
 import Typography from '../Typography'
 import { Container } from './styles'
 
-type Props = {
+export type Props = {
   text: string
 }
 

@@ -24,7 +24,7 @@ export type ModalHandles = {
   closeModal(): void
 }
 
-type Props = {
+export type Props = {
   title?: string
   showCloseButton?: boolean
   zIndex?: number
