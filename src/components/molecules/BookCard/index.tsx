@@ -12,14 +12,19 @@ import { Container } from './styles'
 
 export type Props = {
   book: IBook
+  className?: string
   handleBuy?: (book: IBook) => void
 }
 
-export default function BookCard({ book, handleBuy }: Props): JSX.Element {
+export default function BookCard({
+  book,
+  className,
+  handleBuy
+}: Props): JSX.Element {
   const { t } = useTranslation()
 
   return (
-    <Container>
+    <Container className={className}>
       <div className="image">
         <Link href={`/book/${book.id}`}>
           <a>

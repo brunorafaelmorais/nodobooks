@@ -10,7 +10,7 @@ import formatCurrency from '@/utils/formatCurrency'
 
 import { Container } from './styles'
 
-type Props = {
+export type Props = {
   book: IBook
   handleBuy(): void
 }

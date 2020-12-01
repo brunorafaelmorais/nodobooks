@@ -7,6 +7,6 @@ export default {
   component: Banner
 } as Meta
 
-export const FullBanner: React.FC<Props> = () => (
+export const banner: React.FC<Props> = () => (
   <Banner path="https://picsum.photos/1440/800" alt="Banner" />
 )
