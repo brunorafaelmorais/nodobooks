@@ -81,7 +81,7 @@ export default function BookDetailCard({
         <Typography
           className="book-description"
           fontSize={14}
-          color="textGray"
+          color="textBlack"
           fullWidth
         >
           {book.description}

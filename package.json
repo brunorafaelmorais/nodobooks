@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -s ./public,./static -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "docker:build": "docker build -t nodobooks/frontend .",
+    "docker:run": "docker run -p 3000:3000 nodobooks/frontend"
   },
   "dependencies": {
     "@hookform/resolvers": "^1.0.1",
