@@ -1,7 +1,9 @@
-export default function calcPercentStarRating(stars: number): number {
-  const percent = (stars * 100) / 10
+export default function calcPercentStarRating(numberOfStars: number): number {
+  const MAXIMUM_STARTS = 10
 
-  const finalPercent = 100 - percent
+  const percentage = (numberOfStars * 100) / MAXIMUM_STARTS
 
-  return finalPercent
+  const finalPercentage = 100 - percentage
+
+  return finalPercentage
 }
